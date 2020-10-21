@@ -47,10 +47,5 @@ Heap* createHeap(){
     h->size = 0;
     h->capac = 3;
     h->heapArray = NULL;
-    int i;
-    for(i=0; i<3 ;i++){
-      h->heapArray[i].priority = 1;
-      h->heapArray[i].data = NULL;
-    }
     return NULL;
 }
