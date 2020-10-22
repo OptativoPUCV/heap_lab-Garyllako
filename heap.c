@@ -52,7 +52,30 @@ void heap_pop(Heap* pq){
       pq->size--;
     }
   }
-
+  int cont = 0;
+  void* auxData;
+  int auxPriority;
+  while(cont < pq->capac){
+    if((pq->heapArray[cont].priority < pq->heapArray[cont + 1].priority) && (pq->heapArray[cont].priority < pq->heapArray[cont + 2].priority)){
+      if(pq->heapArray[cont + 1].priority > pq->heapArray[cont + 2].priority){
+        auxData = pq->heapArray[cont + 1].data;
+        pq->heapArray[cont + 1].data = pq->heapArray[cont].data;
+        pq->heapArray[cont].data = auxData;
+        auxPriority = pq->heapArray[cont + 1].priority;
+        pq->heapArray[cont + 1].priority = pq->heapArray[cont].priority;
+        pq->heapArray[cont].priority = auxPriority;
+      }
+      else{
+        auxData = pq->heapArray[cont + 2].data;
+        pq->heapArray[cont + 2].data = pq->heapArray[cont].data;
+        pq->heapArray[cont].data = auxData;
+        auxPriority = pq->heapArray[cont + 2].priority;
+        pq->heapArray[cont + 2].priority = pq->heapArray[cont].priority;
+        pq->heapArray[cont].priority = auxPriority;
+      }
+    }
+    cont++;
+  }
 }
 
 Heap* createHeap(){
