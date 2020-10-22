@@ -117,3 +117,11 @@ Thu Oct 22 00:55:25 UTC 2020:
  tests:  7|1
 total_score: 45/70
 bc970fb
+Thu Oct 22 01:46:02 UTC 2020: 
+ heap.c | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+free(): invalid pointer
+free(): invalid pointer
+ tests:  0|0
+free(): invalid pointer
+b490d21
